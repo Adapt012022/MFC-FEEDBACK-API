@@ -1,0 +1,32 @@
+plugins {
+id 'org.springframework.boot' version '2.1.9.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+	id 'war'
+}
+
+group = 'com.feedback'
+version = 'WS'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	providedCompile  'org.springframework.boot:spring-boot-starter-tomcat'
+	compile files('lib/commons-logging-1.2.jar')
+	compile files('lib/sqljdbc4-3.0.jar')
+	//compile files('lib/ojdbc8-12.2.0.1.jar')
+	
+	//providedCompile group: 'javax.servlet', name: 'servlet-api', version: '2.5'
+	
+	
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+	useJUnitPlatform()
+}
